@@ -1,0 +1,31 @@
+.billy-glow {
+    -webkit-box-shadow:0px 0px 35px 0px #C61B52;
+    -moz-box-shadow: 0px 0px 35px 0px #C61B52;
+    box-shadow: 0px 0px 35px 0px #C61B52;
+}
+
+.bg-billy {
+    background-color: #C61B52;
+}
+
+.border-billy {
+    border-color: #C61B52;
+}
+
+.tally-glow {
+    -webkit-box-shadow:0px 0px 35px 0px #C85C1B;
+    -moz-box-shadow: 0px 0px 35px 0px #C85C1B;
+    box-shadow: 0px 0px 35px 0px #C85C1B;
+}
+
+.bg-tally {
+    background-color: #C85C1B
+}
+
+.border-tally {
+    border-color: #C85C1B
+}
+
+.remove-shadow {
+    box-shadow: none !important;
+}
