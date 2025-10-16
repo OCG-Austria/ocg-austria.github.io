@@ -29,9 +29,10 @@
                         <div class="badge badge-primary bg-billy border-billy" id="billy_version">v---</div>
                     </h2>
                     <p>OCG Verrechnungsprogramm für die erleichterte Kommunikation mit dem internen Rechnungssystem. </p>
-                    <div class="card-actions justify-end">
+                    <div class="card-actions flex justify-between items-center">
                         <button id="billy_btn" class="btn btn-primary bg-billy border-billy remove-shadow">Download</button>
                         <a id="billy_download" href="" download style="display: none;"></a>
+                        <a id="billy_exception" class="text-[#C61B52] no-underline hover:underline" href="" download>Ausnahmeliste herunterladen</a>
                     </div>
                 </div>
             </div>
@@ -45,9 +46,10 @@
                         <div class="badge badge-primary bg-tally border-tally" id="tally_version">v---</div>
                     </h2>
                     <p>OCG Statistiksoftware </p>
-                    <div class="card-actions justify-end">
+                    <div class=" flex card-actions justify-between items-center">
                         <button id="tally_btn" class="btn btn-primary bg-tally border-tally remove-shadow">Download</button>
                         <a id="tally_download" href="" download style="display: none;"></a>
+                        <a id="tally_exception" class="text-[#C85C1B] no-underline hover:underline" href="" download>Ausnahmeliste herunterladen</a>
                     </div>
                 </div>
             </div>
@@ -62,16 +64,19 @@
     let billy_download = document.getElementById("billy_download");
     let billy_button = document.getElementById("billy_btn");
     let tally_button = document.getElementById("tally_btn");
+    let billy_exception = document.getElementById("billy_exception");
+    let tally_exception = document.getElementById("tally_exception");
 
     fetch('downloads/downloads.json')
         .then(response => response.json())
         .then(data => {
-            billy_version.innerText = "v" + data.billy.version;
-            tally_version.innerText = "v" + data.tally.version;
             billy_download.href = data.billy.path;
-            console.log(billy_download.href);
             tally_download.href = data.tally.path;
+            billy_exception.href = data.billy.template_path;
+            tally_exception.href = data.tally.template_path;
             console.log(tally_download.href);
+            billy_version.innerText = billy_download.href.match(/v\d+\.\d+\.\d+/)[0];
+            tally_version.innerText = tally_download.href.match(/v\d+\.\d+\.\d+/)[0];
         }
     ).catch(error => console.error('Error fetching version data:', error));
 
