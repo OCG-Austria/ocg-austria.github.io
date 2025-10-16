@@ -1,0 +1,10 @@
+{
+    "billy": {
+        "version": "1.0.5",
+        "path": "downloads/Billy_v1.0.5.exe"
+    },
+    "tally": {
+        "version": "1.0.1",
+        "path": "downloads/Tally_v1.0.1.exe"
+    }
+}
