@@ -1,10 +1,10 @@
 {
     "billy": {
-        "version": "1.0.5",
-        "path": "downloads/Billy_v1.0.5.exe"
+        "path": "downloads/billy/Billy_v1.0.5.exe",
+        "template_path": "downloads/billy/billy_ausnahmeliste.xlsx"
     },
     "tally": {
-        "version": "1.0.1",
-        "path": "downloads/Tally_v1.0.1.exe"
+        "path": "downloads/tally/Tally_v1.0.2.exe",
+        "template_path": "downloads/tally/tally_ausnahmeliste.xlsx"
     }
 }
