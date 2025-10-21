@@ -6,8 +6,10 @@ async function loadTheme(themeName) {
 
         //Background Styling
         htmlClassList = document.documentElement.classList;
-        if (theme.bg.type === "color") {
+        if (theme.bg.type === "custom-color") {
             htmlClassList.add(`bg-[${theme.bg.value}]`);
+        } else if (theme.bg.type === "color") {
+            htmlClassList.add(`bg-${theme.bg.value}`);
         }
         htmlClassList.add(`text-[${theme.bg.text}]`);
         for (const element of theme.bg.classes.split(" ")) {
@@ -18,8 +20,10 @@ async function loadTheme(themeName) {
         //Header Styling
         const header = document.querySelector('header');
         headerClassList = header.classList;
-        if (theme.header.type === "color") {
+        if (theme.header.type === "custom-color") {
             headerClassList.add(`bg-[${theme.header.value}]`);
+        } else if (theme.bg.type === "color") {
+            headerClassList.add(`bg-${theme.bg.value}`);
         }
         for (const element of theme.header.classes.split(" ")) {
             if (element.trim() === "") continue;
@@ -30,8 +34,10 @@ async function loadTheme(themeName) {
         const cards = document.querySelectorAll('.card');
         cards.forEach((card) => {
             cardClassList = card.classList;
-            if (theme.cards.type === "color") {
+            if (theme.cards.type === "custom-color") {
                 cardClassList.add(`bg-[${theme.cards.value}]`);
+            } else if (theme.bg.type === "color") {
+                cardClassList.add(`bg-${theme.bg.value}`);
             }
             for (const element of theme.cards.classes.split(" ")) {
                 if (element.trim() === "") continue;
