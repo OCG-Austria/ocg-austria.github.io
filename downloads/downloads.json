@@ -4,7 +4,7 @@
         "template_path": "downloads/billy/billy_ausnahmeliste.xlsx"
     },
     "tally": {
-        "path": "downloads/tally/Tally_v1.0.3.exe",
+        "path": "downloads/tally/Tally_v1.0.4.exe",
         "template_path": "downloads/tally/tally_ausnahmeliste.xlsx"
     }
 }
