@@ -1,0 +1,29 @@
+{
+    "bg": {
+        "type": "image",
+        "value": "img/themes/winter/background.png",
+        "text": "#ecf9ff",
+        "classes": ""
+    },
+    "header": {
+        "type": "custom-color",
+        "value": "rgba(255,255,255,0.2)",
+        "classes": "backdrop-blur-lg"
+    },
+    "cards": {
+        "type": "custom-color",
+        "value": "rgba(255,255,255,0.2)",
+        "classes": "backdrop-blur-lg",
+        "exception": {
+            "type": "custom-color",
+            "value": "rgba(255,255,255,0.3)",
+            "classes": "backdrop-blur-sm rounded-sm"
+        },
+        "billy": {
+            "classes": ""
+        },
+        "tally": {
+            "classes": ""
+        }
+    }
+}
