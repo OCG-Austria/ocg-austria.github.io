@@ -94,5 +94,11 @@
         tally_download.click();
     });
 
-    loadTheme("winter");
+    const now = new Date();
+    const isWinter = (now.getMonth() === 12 && now.getDate() >= 1) || (now.getMonth() === 1 && now.getDate() <= 31);
+    if(isWinter) {
+        loadTheme('winter')
+    } else {
+        loadTheme('main')
+    }
 </script>
