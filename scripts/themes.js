@@ -5,12 +5,20 @@ async function loadTheme(themeName) {
         const theme = await response.json();
 
         //Background Styling
+        const html = document.documentElement;
         htmlClassList = document.documentElement.classList;
         if (theme.bg.type === "custom-color") {
             htmlClassList.add(`bg-[${theme.bg.value}]`);
         } else if (theme.bg.type === "color") {
             htmlClassList.add(`bg-${theme.bg.value}`);
+        } else if (theme.bg.type === "image") {
+            html.style.backgroundImage = `url(${theme.bg.value})`
+            html.style.backgroundRepeat = "no-repeat"; // optional
+            html.style.backgroundSize = "cover";      // optional, falls nicht in Tailwind-Klassen
+            html.style.backgroundPosition = "center"; // optional
         }
+
+
         htmlClassList.add(`text-[${theme.bg.text}]`);
         for (const element of theme.bg.classes.split(" ")) {
             if(element.trim() === "") continue;
@@ -22,8 +30,8 @@ async function loadTheme(themeName) {
         headerClassList = header.classList;
         if (theme.header.type === "custom-color") {
             headerClassList.add(`bg-[${theme.header.value}]`);
-        } else if (theme.bg.type === "color") {
-            headerClassList.add(`bg-${theme.bg.value}`);
+        } else if (theme.header.type === "color") {
+            headerClassList.add(`bg-${theme.cards.value}`);
         }
         for (const element of theme.header.classes.split(" ")) {
             if (element.trim() === "") continue;
@@ -36,8 +44,8 @@ async function loadTheme(themeName) {
             cardClassList = card.classList;
             if (theme.cards.type === "custom-color") {
                 cardClassList.add(`bg-[${theme.cards.value}]`);
-            } else if (theme.bg.type === "color") {
-                cardClassList.add(`bg-${theme.bg.value}`);
+            } else if (theme.cards.type === "color") {
+                cardClassList.add(`bg-${theme.cards.value}`);
             }
             for (const element of theme.cards.classes.split(" ")) {
                 if (element.trim() === "") continue;
