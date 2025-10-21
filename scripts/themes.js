@@ -83,6 +83,23 @@ async function loadTheme(themeName) {
             if (element.trim() === "") continue;
             tallyCardClassList.add(element);
         }
+        
+        //Adding stylesheets
+        theme.extra.css.forEach((sheet) => {
+            const link = document.createElement('link');
+            link.rel='stylesheet'
+            link.href=sheet
+            document.head.append(link)
+        });
+
+        //Adding scripts
+        theme.extra.js.forEach((scriptPath) => {
+            const script = document.createElement('script');
+            script.src = scriptPath;
+            script.defer = true;
+            document.head.appendChild(script);
+        })
+
     } catch (error) {
         console.error("Fehler beim Laden des Themas:", error);
     }

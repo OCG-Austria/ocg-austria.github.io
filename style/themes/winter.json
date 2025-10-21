@@ -25,5 +25,13 @@
         "tally": {
             "classes": ""
         }
+    },
+    "extra": {
+        "css": [
+            "style/themes/winter/winter.css"
+        ],
+        "js": [
+            "style/themes/winter/winter.js"
+        ]
     }
 }
