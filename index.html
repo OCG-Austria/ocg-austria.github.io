@@ -14,7 +14,7 @@
 </head>
 
 <body class="">
-    <header class="flex gap-5 items-center border-b-2 border-b-neutral-700 p-2 fixed top-0 left-0 w-full">
+    <header class="flex gap-5 items-center p-2 fixed top-0 left-0 w-full">
         <img src="img/ocg_logo.png" alt="OCG-Logo" class="max-h-16" />
         <h1 class="flex justify-center text-2xl absolute left-1/2 transform -translate-x-1/2">Download-Seite</h1>
     </header>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full max-w-100" id="tally-card">
+            <div class="card w-full max-w-100 backdrop-blur-lgx" id="tally-card">
                 <figure class="mt-4">
                     <img src="img/tally.png" alt="tally_banner" />
                 </figure>
@@ -94,5 +94,5 @@
         tally_download.click();
     });
 
-    loadTheme("main");
+    loadTheme("winter");
 </script>
