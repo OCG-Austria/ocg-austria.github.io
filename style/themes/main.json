@@ -1,0 +1,24 @@
+{
+    "bg": {
+        "type": "color",
+        "value": "#1d232a",
+        "text": "#ecf9ff",
+        "classes": ""
+    },
+    "header": {
+        "type": "color",
+        "value": "#1d232a",
+        "classes": "border-b-2 border-b-neutral-700"
+    },
+    "cards": {
+        "type": "color",
+        "value": "#1d232a",
+        "classes": "border border-gray-800",
+        "billy": {
+            "classes": "billy-glow"
+        },
+        "tally": {
+            "classes": "tally-glow"
+        }
+    }
+}
