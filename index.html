@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -9,17 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="scripts/themes.js"></script>
 </head>
 
-<body>
-    <header class="flex gap-5 items-center border-b-2 border-b-neutral-700 p-2 fixed top-0 left-0 w-full">
-        <img src="img/ocg_logo.png" alt="OCG-Logo" class="max-h-16"/>
+<body class="overflow-hidden">
+    <header class="flex gap-5 items-center p-2 fixed top-0 left-0 w-full">
+        <img src="img/ocg_logo.png" alt="OCG-Logo" class="max-h-16" />
         <h1 class="flex justify-center text-2xl absolute left-1/2 transform -translate-x-1/2">Download-Seite</h1>
     </header>
     <div class="flex justify-center items-center w-full h-dvh">
         <div class="p-5 grid grid-cols-1 gap-20 sm:grid-cols-2 pt-100 sm:pt-20">
-            <div class="card w-full border border-gray-800 billy-glow sm:h-full max-w-100">
+            <div class="card w-full max-w-100" id="billy-card">
                 <figure class="mt-4">
                     <img src="img/billy.png" alt="billy_banner" />
                 </figure>
@@ -28,15 +29,18 @@
                         Billy - Verrechnungshelfer
                         <div class="badge badge-primary bg-billy border-billy" id="billy_version">v---</div>
                     </h2>
-                    <p>OCG Verrechnungsprogramm für die erleichterte Kommunikation mit dem internen Rechnungssystem. </p>
+                    <p>OCG Verrechnungsprogramm für die erleichterte Kommunikation mit dem internen Rechnungssystem.
+                    </p>
                     <div class="card-actions flex justify-between items-center">
-                        <button id="billy_btn" class="btn btn-primary bg-billy border-billy remove-shadow">Download</button>
+                        <button id="billy_btn"
+                            class="btn btn-primary bg-billy border-billy remove-shadow">Download</button>
                         <a id="billy_download" href="" download style="display: none;"></a>
-                        <a id="billy_exception" class="text-[#C61B52] no-underline hover:underline" href="" download>Ausnahmeliste herunterladen</a>
+                        <a id="billy_exception" class="text-[#C61B52] no-underline hover:underline p-2.5" href=""
+                            download>Ausnahmeliste herunterladen</a>
                     </div>
                 </div>
             </div>
-            <div class="card w-full border border-gray-800 shadow-lg tally-glow max-w-100">
+            <div class="card w-full max-w-100 backdrop-blur-lgx" id="tally-card">
                 <figure class="mt-4">
                     <img src="img/tally.png" alt="tally_banner" />
                 </figure>
@@ -47,15 +51,18 @@
                     </h2>
                     <p>OCG Statistiksoftware </p>
                     <div class=" flex card-actions justify-between items-center">
-                        <button id="tally_btn" class="btn btn-primary bg-tally border-tally remove-shadow">Download</button>
+                        <button id="tally_btn"
+                            class="btn btn-primary bg-tally border-tally remove-shadow">Download</button>
                         <a id="tally_download" href="" download style="display: none;"></a>
-                        <a id="tally_exception" class="text-[#C85C1B] no-underline hover:underline" href="" download>Ausnahmeliste herunterladen</a>
+                        <a id="tally_exception" class="text-[#C85C1B] no-underline hover:underline p-2.5" href=""
+                            download>Ausnahmeliste herunterladen</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 <script>
     let billy_version = document.getElementById("billy_version");
@@ -78,12 +85,20 @@
             billy_version.innerText = billy_download.href.match(/v\d+\.\d+\.\d+/)[0];
             tally_version.innerText = tally_download.href.match(/v\d+\.\d+\.\d+/)[0];
         }
-    ).catch(error => console.error('Error fetching version data:', error));
+        ).catch(error => console.error('Error fetching version data:', error));
 
-    billy_button.addEventListener("click", function() {
+    billy_button.addEventListener("click", function () {
         billy_download.click();
     });
-    tally_button.addEventListener("click", function() {
+    tally_button.addEventListener("click", function () {
         tally_download.click();
     });
+
+    const now = new Date();
+    const isWinter = (now.getMonth() === 12 && now.getDate() >= 1) || (now.getMonth() === 1 && now.getDate() <= 31);
+    if(isWinter) {
+        loadTheme('winter')
+    } else {
+        loadTheme('main')
+    }
 </script>

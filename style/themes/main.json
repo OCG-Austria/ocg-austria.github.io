@@ -1,0 +1,33 @@
+{
+    "bg": {
+        "type": "custom-color",
+        "value": "#1d232a",
+        "text": "#ecf9ff",
+        "classes": ""
+    },
+    "header": {
+        "type": "custom-color",
+        "value": "#1d232a",
+        "classes": "border-b-2 border-b-neutral-700"
+    },
+    "cards": {
+        "type": "custom-color",
+        "value": "#1d232a",
+        "classes": "border border-gray-800",
+        "exception": {
+            "type": "",
+            "value": "",
+            "classes": ""
+        },
+        "billy": {
+            "classes": "billy-glow"
+        },
+        "tally": {
+            "classes": "tally-glow"
+        }
+    },
+    "extra": {
+        "css": [],
+        "js": []
+    }
+}
