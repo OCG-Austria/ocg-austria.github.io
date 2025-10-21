@@ -18,17 +18,14 @@
     box-shadow: none !important;
 }
 
-/* Nur Dark Mode */
-@media (prefers-color-scheme: dark) {
-    .billy-glow {
-        -webkit-box-shadow:0px 0px 35px 0px #C61B52;
-        -moz-box-shadow: 0px 0px 35px 0px #C61B52;
-        box-shadow: 0px 0px 35px 0px #C61B52;
-    }
+.billy-glow {
+    -webkit-box-shadow:0px 0px 35px 0px #C61B52;
+    -moz-box-shadow: 0px 0px 35px 0px #C61B52;
+    box-shadow: 0px 0px 35px 0px #C61B52;
+}
 
-    .tally-glow {
-        -webkit-box-shadow:0px 0px 35px 0px #C85C1B;
-        -moz-box-shadow: 0px 0px 35px 0px #C85C1B;
-        box-shadow: 0px 0px 35px 0px #C85C1B;
-    }
+.tally-glow {
+    -webkit-box-shadow:0px 0px 35px 0px #C85C1B;
+    -moz-box-shadow: 0px 0px 35px 0px #C85C1B;
+    box-shadow: 0px 0px 35px 0px #C85C1B;
 }
