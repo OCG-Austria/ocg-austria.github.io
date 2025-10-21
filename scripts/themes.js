@@ -53,6 +53,21 @@ async function loadTheme(themeName) {
             }
         });
 
+        //Card Exception Button Styling
+        const exceptionButtons = document.querySelectorAll('a[id*="exception"]');
+        exceptionButtons.forEach((exception) => {
+            exceptionClassList = exception.classList;
+            if (theme.cards.exception.type === "custom-color") {
+                exceptionClassList.add(`bg-[${theme.cards.exception.value}]`);
+            } else if (theme.cards.exception.type === "color") {
+                exceptionClassList.add(`bg-${theme.cards.exception.value}`);
+            }
+            for (const element of theme.cards.exception.classes.split(" ")) {
+                if (element.trim() === "") continue;
+                exceptionClassList.add(element);
+            }
+        });
+
         //Billy Card Styling
         const billyCard = document.getElementById('billy-card');
         billyCardClassList = billyCard.classList;
