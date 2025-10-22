@@ -95,10 +95,22 @@
     });
 
     const now = new Date();
+    const currTheme = null;
     const isWinter = (now.getMonth() === 12 && now.getDate() >= 1) || (now.getMonth() === 1 && now.getDate() <= 31);
     if(isWinter) {
         loadTheme('winter')
+        currTheme = 'winter'
     } else {
         loadTheme('main')
+        currTheme = 'main'
+    }
+
+    function getCurrentTheme() {
+        return currTheme;
+    }
+
+    function printCurrentTheme() {
+        if(currTheme) console.log(currTheme);
+        else console.log('Aktuell ist kein Theme ausgewählt')
     }
 </script>
