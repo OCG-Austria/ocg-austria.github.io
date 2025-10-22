@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full max-w-100 backdrop-blur-lgx" id="tally-card">
+            <div class="card w-full max-w-100" id="tally-card">
                 <figure class="mt-4">
                     <img src="img/tally.png" alt="tally_banner" />
                 </figure>
@@ -95,7 +95,7 @@
     });
 
     const now = new Date();
-    const currTheme = null;
+    let currTheme = null;
     const isWinter = (now.getMonth() === 12 && now.getDate() >= 1) || (now.getMonth() === 1 && now.getDate() <= 31);
     if(isWinter) {
         loadTheme('winter')
@@ -112,5 +112,15 @@
     function printCurrentTheme() {
         if(currTheme) console.log(currTheme);
         else console.log('Aktuell ist kein Theme ausgewählt')
+    }
+
+    async function switchTheme(newThemeName) {
+        if (currTheme && currTheme !== newThemeName) {
+            await unloadTheme(currTheme);
+        }
+
+        await loadTheme(newThemeName);
+        currTheme = newThemeName;
+        console.log(`Theme "${newThemeName}" wurde geladen.`);
     }
 </script>
