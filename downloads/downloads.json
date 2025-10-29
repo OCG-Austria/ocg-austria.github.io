@@ -1,10 +1,10 @@
 {
-    "billy": {
-        "path": "downloads/billy/Billy_v1.0.5.exe",
-        "template_path": "downloads/billy/billy_ausnahmeliste.xlsx"
-    },
-    "tally": {
-        "path": "downloads/tally/Tally_v1.0.4.exe",
-        "template_path": "downloads/tally/tally_ausnahmeliste.xlsx"
-    }
+  "billy": {
+    "path": "downloads/billy/Billy_v1.0.5.exe",
+    "template_path": "downloads/billy/billy_ausnahmeliste.xlsx"
+  },
+  "tally": {
+    "path": "downloads/tally/Tally_v1.0.5.exe",
+    "template_path": "downloads/tally/tally_ausnahmeliste.xlsx"
+  }
 }
