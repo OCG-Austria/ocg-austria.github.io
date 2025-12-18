@@ -95,7 +95,7 @@
 
     const now = new Date();
     let currTheme = null;
-    const isWinter = (now.getMonth() === 12 && now.getDate() >= 1) || (now.getMonth() === 1 && now.getDate() <= 31);
+    const isWinter = (now.getMonth() === 11 && now.getDate() >= 1) || (now.getMonth() === 0 && now.getDate() <= 31);
     if(isWinter) {
         loadTheme('winter')
         currTheme = 'winter'
