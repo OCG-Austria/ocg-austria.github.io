@@ -77,12 +77,12 @@
     fetch('downloads/downloads.json')
         .then(response => response.json())
         .then(data => {
-            billy_download.href = data.billy.path;
-            tally_download.href = data.tally.path;
+            billy_download.href = data.billy.download_url;
+            tally_download.href = data.tally.download_url;
             billy_exception.href = data.billy.template_path;
             tally_exception.href = data.tally.template_path;
-            billy_version.innerText = billy_download.href.match(/v\d+\.\d+\.\d+/)[0];
-            tally_version.innerText = tally_download.href.match(/v\d+\.\d+\.\d+/)[0];
+            billy_version.innerText = data.billy.version;
+            tally_version.innerText = data.tally.version;
         }
         ).catch(error => console.error('Error fetching version data:', error));
 
