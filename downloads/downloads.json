@@ -5,8 +5,8 @@
     "template_path": "downloads/billy/billy_ausnahmeliste.xlsx"
   },
   "tally": {
-    "download_url": "https://github.com/OCG-Austria/tally/releases/download/v1.0.6/Tally_v1.0.6.exe",
-    "version": "v1.0.6",
+    "download_url": "https://github.com/OCG-Austria/tally/releases/download/vTEST/Tally_vX.X.X.exe",
+    "version": "vTEST",
     "template_path": "downloads/tally/tally_ausnahmeliste.xlsx"
   }
 }
